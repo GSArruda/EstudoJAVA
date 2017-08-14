@@ -31,7 +31,7 @@ public class Batedeira extends Produtos {
         
     }
     
-    public double mudaValor(double preco){
+    public @Override double CalculaPreco(double preco){
         double novoValor = preco - ((20.0/100.0) * preco);
         return novoValor;
     }

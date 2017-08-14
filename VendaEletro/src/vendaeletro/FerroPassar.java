@@ -21,7 +21,7 @@ public class FerroPassar extends Produtos{
     }
     
     
-    public double mudaValor(double preco){
+    public @Override double CalculaPreco(double preco){
         double novoValor = preco - ((15.0/100.0) * preco);
         return novoValor;
     }

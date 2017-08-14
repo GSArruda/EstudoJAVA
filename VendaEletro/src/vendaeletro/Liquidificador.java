@@ -3,7 +3,7 @@ package vendaeletro;
 
 
 public class Liquidificador extends Produtos {
-    private String tampaCor,tampaDesc;
+    private Tampa tampa;
     
     
     public Liquidificador(String marca,int voltagem){
@@ -22,8 +22,12 @@ public class Liquidificador extends Produtos {
          }
     }
     
+     
+    public void setTampa(Tampa novaTampa){
+        this.tampa = novaTampa;
+    }
     
-    public double mudaValor(double preco){
+    public @Override double CalculaPreco(double preco){
         double novoValor = preco - ((10.0/100.0) * preco);
         return novoValor;
     }

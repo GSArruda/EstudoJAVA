@@ -31,6 +31,9 @@ public class VendaEletro {
                     VoltagemCliente = Integer.parseInt(JOptionPane.showInputDialog("Informe a voltagem do produto : "));
                     precoCliente = Double.parseDouble(JOptionPane.showInputDialog("Informe o preço do produto : "));
                     Liquidificador novoLiquidificador = new Liquidificador(MarcaCliente,VoltagemCliente,precoCliente);
+                    Tampa novaTampa = new Tampa("Vermelha","Básica");
+                    novoLiquidificador.setTampa(novaTampa);
+                    
                     verificaVoltagem = novoLiquidificador.validaVoltagem(VoltagemCliente);
                     while (verificaVoltagem == false){
                         VoltagemCliente = Integer.parseInt(JOptionPane.showInputDialog("A voltagem do produto está inválida, por favor coloque a voltagem correta: "));
@@ -39,7 +42,7 @@ public class VendaEletro {
                     mesCompra =  JOptionPane.showInputDialog("Informe o mês da compra : ");
                     verificaMes = novoLiquidificador.verificaMes(mesCompra);
                     if (verificaMes == true ){
-                        precoCliente = novoLiquidificador.mudaValor(precoCliente);
+                        precoCliente = novoLiquidificador.CalculaPreco(precoCliente);
                         JOptionPane.showMessageDialog(null,"Desconto de 10% do dia dos pais, novo valor do produto : " + precoCliente + " reais.");
                     }
                     //CÁLCULO DÁ MÉDIA DE LITROS
@@ -66,7 +69,7 @@ public class VendaEletro {
                     mesCompra =  JOptionPane.showInputDialog("Informe o mês da compra : ");
                     verificaMes = novoBatedeira.verificaMes(mesCompra);
                     if (verificaMes == true ){
-                        double novoValor = novoBatedeira.mudaValor(precoCliente);
+                        double novoValor = novoBatedeira.CalculaPreco(precoCliente);
                         JOptionPane.showMessageDialog(null,"Desconto de 20% do natal, novo valor do produto : " + novoValor + " reais.");
                     }
                     
@@ -96,7 +99,7 @@ public class VendaEletro {
                     mesCompra =  JOptionPane.showInputDialog("Informe o mês da compra : ");
                     verificaMes = novoFerro.verificaMes(mesCompra);
                     if (verificaMes == true ){
-                        double novoValor = novoFerro.mudaValor(precoCliente);
+                        double novoValor = novoFerro.CalculaPreco(precoCliente);
                         JOptionPane.showMessageDialog(null,"Desconto de 15% do dia das mães, novo valor do produto : " + novoValor + " reais.");
                     }
                     break;

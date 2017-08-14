@@ -18,9 +18,9 @@ public class Produtos {
         this.voltagem = voltagem;
     }
     
-    public double CalculaPreco(int desconto,double preco){
-        //verificar se tem que por desconto no tipo double.
-        this.preco = preco - ((desconto/100.0) * preco);
+    public double CalculaPreco(double preco){
+        
+        this.preco = preco - ((preco/100.0) * preco);
         return this.preco;
     }
     
