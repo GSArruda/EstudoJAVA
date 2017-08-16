@@ -10,7 +10,7 @@ public class Notebook extends Dispositivos{
     }
     
     public double CalculaProporcao(int tamanho){
-        return ((100.0/100.0) * tamanho);
+        return tamanho*2;
         
     }
 }

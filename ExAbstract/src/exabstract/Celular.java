@@ -10,7 +10,7 @@ public class Celular extends Dispositivos{
     }
     
     public double CalculaProporcao(int tamanho){
-        return tamanho - ((30.0/100.0) * tamanho);
-        
+        double proporcao =  tamanho - ((30.0/100.0) * tamanho);
+        return proporcao;
     }
 }
