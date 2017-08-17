@@ -1,11 +1,11 @@
 
 package exabstract;
-
+import java.util.ArrayList;
 
 abstract class Dispositivos {
-    protected Paragrafo paragrafo;
-    protected Link link;
-    protected Lista lista;
+    protected ArrayList<Paragrafo> paragrafo  = new ArrayList <>();
+    protected ArrayList<Link> link = new ArrayList <> ();
+    protected ArrayList<Lista> lista = new ArrayList <> ();
     
     
     
