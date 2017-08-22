@@ -65,8 +65,16 @@ public class Aeroporto {
         return this.saidaVoos.get(i);
     }
     
+    public ArrayList getChegadaVoos(){
+        return this.entradaVoos;
+    }
+    
+    public Voo getChegadaVoo(int i){
+        return this.entradaVoos.get(i);
+    }
+    
     public void setEntradaVoo(Voo voo){
-        this.saidaVoos.add(voo);
+        this.entradaVoos.add(voo);
     }
     
     public ArrayList getEntradaVoos(){
@@ -111,9 +119,15 @@ public class Aeroporto {
         aeroportos.add(aeroporto);
     }
     
+    public boolean comparaAeroporto(String codigo){
+        if (this.codigo.equals(codigo)){
+            return true;
+        }return false;
+    } 
     
-    
-    
+    public static void removerAviaoPatio(Aviao aviao){
+        avioesPatio.remove(aviao);
+    }
     
     
 }

@@ -6,8 +6,7 @@ import java.util.ArrayList;
 
 public class PBL3 {
     
-    public static void main(String[] args) {
-        
+    public static void main(String[] args) {        
         
         int opcaoPrincipal; 
         
@@ -49,7 +48,7 @@ public class PBL3 {
                     int opcaoAeroporto;
                     System.out.println("Aeroporto escolhido : " + Aeroporto.getAeroporto(selecaoAeroporto).getNome());
                     do{
-                        int lacoVoo=0;
+                        int lacoVooSaida=0,lacoVooChegada=0;
                         opcaoAeroporto = Integer.parseInt(JOptionPane.showInputDialog("0-Sair\n1-Verificar Internacionalidade\n2-Adicionar Avião ao pátio\n3-Adicionar Vôo\n4-Comparar Aeroportos\n5-Verificar Aviões no pátio\n6-Verificar vôos partindo\n7-Verificar vôos chegando"));
                         switch(opcaoAeroporto){
                             case 0:
@@ -68,40 +67,86 @@ public class PBL3 {
                                 int selecaoAviao = Integer.parseInt(JOptionPane.showInputDialog("Selecione o avião desejado"));
                                 Aeroporto.getAeroporto(selecaoAeroporto).adicionarAviaoPatio(Aviao.getAviao(selecaoAviao));
                                 JOptionPane.showMessageDialog(null,"Avião adicionado ao pátio.");
+                                Aviao.removerAviao(Aviao.getAviao(selecaoAviao));
                                 break;
                             case 3:                                
-                                while (lacoVoo == 0){        
-                                    JOptionPane.showMessageDialog(null,"Lista de aviôes no pátio");
-                                    for (int i = 0 ;i < Aeroporto.getAeroporto(selecaoAeroporto).getAvioesPatio().size();i++){
-                                        System.out.println(i+" - "+ Aeroporto.getAviaoPatio(i).getPrefixo() +  " " + Aeroporto.getAviaoPatio(i).getNome());
-                                    }
-                                    int selecaoAviaoPatio = Integer.parseInt(JOptionPane.showInputDialog("Selecione o avião para a viagem"));
-                                    Aviao aviao = Aeroporto.getAeroporto(selecaoAeroporto).getAviaoPatio(selecaoAviaoPatio);
-                                    System.out.println("Avião escolhido : " + Aeroporto.getAeroporto(selecaoAeroporto).getAviaoPatio(selecaoAviaoPatio).getNome());
-                                    Aeroporto aeroportoSaida = Aeroporto.getAeroporto(selecaoAeroporto);
-                                    JOptionPane.showMessageDialog(null,"Lista de aeroportos : ");
-                                    for (int i = 0;i < Aeroporto.getListaAeroportos().size();i++){
-                                        System.out.println(i+" - "+Aeroporto.getAeroporto(i).getCodigo() + ":"+Aeroporto.getAeroporto(i).getNome());                      
-                                    }
-                                    int selecaoAeroportoDestino = Integer.parseInt(JOptionPane.showInputDialog("Selecione o aeroporto de destino (Que não seja o que você está)"));
-                                    Aeroporto aeroportoDestino = Aeroporto.getAeroporto(selecaoAeroportoDestino);
-                                    System.out.println("Destino escolhido : " + Aeroporto.getAeroporto(selecaoAeroportoDestino).getNome());
-                                    Voo novoVoo = new Voo(aviao,aeroportoSaida,aeroportoDestino);
-                                    JOptionPane.showMessageDialog(null,"Vôo criado com sucesso.");
-                                    Aeroporto.getAeroporto(selecaoAeroporto).setSaidaVoo(novoVoo);
-                                    lacoVoo = JOptionPane.showConfirmDialog(null,"Deseja criar mais um vôo?");
+                                        
+                                    int tipoVoo = Integer.parseInt(JOptionPane.showInputDialog(null,"1-Vôos saindo\n2-Vôos chegando"));   
+                                    switch(tipoVoo){
+                                        case 1 :
+                                            while (lacoVooSaida == 0){
+                                                JOptionPane.showMessageDialog(null,"Lista de aviôes no pátio");
+                                                for (int i = 0 ;i < Aeroporto.getAeroporto(selecaoAeroporto).getAvioesPatio().size();i++){
+                                                    System.out.println(i+" - "+ Aeroporto.getAviaoPatio(i).getPrefixo() +  " " + Aeroporto.getAviaoPatio(i).getNome());
+                                                }
+                                                int selecaoAviaoPatio = Integer.parseInt(JOptionPane.showInputDialog("Selecione o avião para a viagem"));
+                                                Aviao aviao = Aeroporto.getAeroporto(selecaoAeroporto).getAviaoPatio(selecaoAviaoPatio);
+                                                System.out.println("Avião escolhido : " + Aeroporto.getAeroporto(selecaoAeroporto).getAviaoPatio(selecaoAviaoPatio).getNome());
+                                                Aeroporto aeroportoSaida = Aeroporto.getAeroporto(selecaoAeroporto);
+                                                JOptionPane.showMessageDialog(null,"Lista de aeroportos : ");
+                                                for (int i = 0;i < Aeroporto.getListaAeroportos().size();i++){
+                                                    System.out.println(i+" - "+Aeroporto.getAeroporto(i).getCodigo() + ":"+Aeroporto.getAeroporto(i).getNome());                      
+                                                }
+                                                int selecaoAeroportoDestino = Integer.parseInt(JOptionPane.showInputDialog("Selecione o aeroporto de destino (Que não seja o que você está)"));
+                                                Aeroporto aeroportoDestino = Aeroporto.getAeroporto(selecaoAeroportoDestino);
+                                                System.out.println("Destino escolhido : " + Aeroporto.getAeroporto(selecaoAeroportoDestino).getNome());
+                                                Voo novoVoo = new Voo(aviao,aeroportoSaida,aeroportoDestino);
+                                                JOptionPane.showMessageDialog(null,"Vôo criado com sucesso.");
+                                                Aeroporto.getAeroporto(selecaoAeroporto).setSaidaVoo(novoVoo);
+                                                Aeroporto.removerAviaoPatio(Aeroporto.getAeroporto(selecaoAeroporto).getAviaoPatio(selecaoAviaoPatio));
+                                                lacoVooSaida = JOptionPane.showConfirmDialog(null,"Deseja criar mais um vôo de saída?");
+                                            }
+                                        break;
+                                        case 2:
+                                            while (lacoVooChegada == 0){
+                                                JOptionPane.showMessageDialog(null,"Lista de aeroportos : ");
+                                                for (int i = 0;i < Aeroporto.getListaAeroportos().size();i++){
+                                                    System.out.println(i+" - "+Aeroporto.getAeroporto(i).getCodigo() + ":"+Aeroporto.getAeroporto(i).getNome());                      
+                                                }
+                                                int selecaoAeroportoPartida = Integer.parseInt(JOptionPane.showInputDialog("Selecione o aeroporto de partida"));
+                                                Aeroporto aeroportoPartida = Aeroporto.getAeroporto(selecaoAeroportoPartida);
+                                                JOptionPane.showMessageDialog(null,"Lista de aviôes");
+                                                for (int i = 0 ;i < Aeroporto.getAeroporto(selecaoAeroportoPartida).getAvioesPatio().size();i++){
+                                                    System.out.println(i+" - "+ Aeroporto.getAeroporto(selecaoAeroportoPartida).getAviaoPatio(i).getPrefixo() +  " " + Aviao.getAviao(i).getNome());
+                                                }
+                                                int selecaoAviaoViagem = Integer.parseInt(JOptionPane.showInputDialog("Selecione o avião da viagem"));
+                                                Aviao aviaoViagem = Aeroporto.getAeroporto(selecaoAeroportoPartida).getAviaoPatio(selecaoAviaoViagem);
+                                                Voo novoVooChegada = new Voo(aviaoViagem,aeroportoPartida,Aeroporto.getAeroporto(selecaoAeroporto));
+                                                Aeroporto.getAeroporto(selecaoAeroporto).setEntradaVoo(novoVooChegada);
+                                                Aviao.removerAviao(aviaoViagem);
+                                                lacoVooSaida = JOptionPane.showConfirmDialog(null,"Deseja criar mais um vôo de chegada?");     
+                                            }
+                                            break;
                                 }
                                 break;
                             case 4:
+                                JOptionPane.showMessageDialog(null,"Lista de aeroportos : ");
+                                for (int i = 0;i < Aeroporto.getListaAeroportos().size();i++){
+                                    System.out.println(i+" - "+Aeroporto.getAeroporto(i).getCodigo() + ":"+Aeroporto.getAeroporto(i).getNome());                      
+                                }
+                                int selecaoAeroportoComparacao = Integer.parseInt(JOptionPane.showInputDialog("Selecione o aeroporto para comparação"));
+                                boolean comparacao = Aeroporto.getAeroporto(selecaoAeroporto).comparaAeroporto(Aeroporto.getAeroporto(selecaoAeroportoComparacao).getCodigo());
+                                if (comparacao == true ){
+                                    JOptionPane.showMessageDialog(null,"Os aeroportos são iguais.");
+                                }else
+                                    JOptionPane.showMessageDialog(null,"Os aeroportos são diferentes.");
                                 break;
                             case 5:
+                                JOptionPane.showMessageDialog(null,"Lista de aviôes no pátio");
+                                for (int i = 0 ;i < Aeroporto.getAeroporto(selecaoAeroporto).getAvioesPatio().size();i++){
+                                    System.out.println(i+" - "+ Aeroporto.getAviaoPatio(i).getPrefixo() +  " " + Aeroporto.getAviaoPatio(i).getNome());
+                                }
                                 break;
                             case 6:
                                 for (int i = 0 ;i < Aeroporto.getAeroporto(selecaoAeroporto).getSaidaVoos().size();i++){
                                     System.out.println("Avião : " + Aeroporto.getAeroporto(selecaoAeroporto).getSaidaVoo(i).getAviao().getNome());
                                     System.out.println("Destino : " + Aeroporto.getAeroporto(selecaoAeroporto).getSaidaVoo(i).getDestino().getNome());
                                 }
-                        
+                            case 7:
+                                for (int i = 0 ;i < Aeroporto.getAeroporto(selecaoAeroporto).getChegadaVoos().size();i++){
+                                    System.out.println("Avião : " + Aeroporto.getAeroporto(selecaoAeroporto).getChegadaVoo(i).getAviao().getNome());
+                                    System.out.println("Destino : " + Aeroporto.getAeroporto(selecaoAeroporto).getChegadaVoo(i).getDestino().getNome());
+                                }
                         
                         
                         

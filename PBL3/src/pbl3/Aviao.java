@@ -6,7 +6,7 @@ import java.util.ArrayList;
 public class Aviao {
     private String prefixo,nome,modelo,fabricante;
     private int assentosTotal;
-    private static int assentosOcupados = 0;
+    private int assentosOcupados = 0;
     private static ArrayList<Aviao> avioes = new ArrayList<>();
     
     
@@ -79,7 +79,9 @@ public class Aviao {
         return avioes.get(i);
     }
 
-
+    public static void removerAviao(Aviao aviao){
+        avioes.remove(aviao);
+    }
 
 
 }
