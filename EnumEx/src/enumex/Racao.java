@@ -2,7 +2,7 @@
 package enumex;
 
 public abstract class Racao {
-    double valor;
+    protected double valor;
     
     public abstract void setValor(double valor);
     public abstract double getValor();

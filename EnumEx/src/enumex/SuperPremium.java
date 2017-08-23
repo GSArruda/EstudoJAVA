@@ -3,10 +3,6 @@ package enumex;
 
 public class SuperPremium extends Racao{
     
-    public SuperPremium(double valor){
-        this.valor = valor;
-    }
-    
     @Override public void setValor(double valor){
         this.valor = valor + (0.2 * valor);
     }

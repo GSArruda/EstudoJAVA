@@ -2,14 +2,10 @@
 package enumex;
 
 public class Premium extends Racao{
-    
-    public Premium(double valor){
-        this.valor = valor;
-    }
 
     //get o valor da comum
     @Override public void setValor(double valor){
-        this.valor = valor + (0.1 * valor);
+        this.valor = (valor + (0.1 * valor));
     }
     
     @Override public double getValor(){
