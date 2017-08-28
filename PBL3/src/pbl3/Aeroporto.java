@@ -129,5 +129,18 @@ public class Aeroporto {
         avioesPatio.remove(aviao);
     }
     
-    
+    public boolean verificaRota (Aeroporto y){
+        int cont =0;
+        for (int i = 0 ; i < this.getSaidaVoos().size();i++){
+            if (this.getSaidaVoo(i).getDestino().getNome().equals(y.getChegadaVoo(i).getSaida().getNome())){
+                cont++;
+            }    
+        }
+        
+        if (cont != 0 ){
+            return true;
+        }else 
+            return false;
+        
+    }
 }
