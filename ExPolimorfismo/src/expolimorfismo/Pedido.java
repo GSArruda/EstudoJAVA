@@ -18,13 +18,6 @@ public class Pedido {
         return produtos;
     }
     
-    static Produto getFrio(int i){
-        if (produtos.get(i) instanceof Frios)
-            return produtos.get(i);
-        else
-            return null;      
-    }
-    
     static Produto getPaozinhos(){
        return null; 
     }

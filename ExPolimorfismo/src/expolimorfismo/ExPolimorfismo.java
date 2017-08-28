@@ -17,7 +17,9 @@ public class ExPolimorfismo {
         Pedido.setProduto(produto4);
         
         for (int i = 0;i < Pedido.getProdutos().size() ; i++){
-            System.out.println(Pedido.getFrio(i).getPreco() + " " + Pedido.getFrio(i).getQuantidade());
+            if (Pedido.getProdutos().get(i) instanceof Frios){
+                System.out.println(Pedido.getProduto(i).getPreco() + " " + Pedido.getProduto(i).getQuantidade());
+            }
         }
         
     }
