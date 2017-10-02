@@ -3,15 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Gabriel/Documents/My%20Cheat%20Tables/MainPBL/src/mainpbl/MainPBL.java</file>
-            <file>file:/C:/Users/Gabriel/Documents/My%20Cheat%20Tables/MainPBL/src/model/Funcionario.java</file>
-            <file>file:/C:/Users/Gabriel/Documents/My%20Cheat%20Tables/MainPBL/src/view/CRUD.java</file>
-            <file>file:/C:/Users/Gabriel/Documents/My%20Cheat%20Tables/MainPBL/src/model/VendedorComissionado.java</file>
-            <file>file:/C:/Users/Gabriel/Documents/My%20Cheat%20Tables/MainPBL/src/model/ConexaoBanco.java</file>
-            <file>file:/C:/Users/Gabriel/Documents/My%20Cheat%20Tables/MainPBL/src/dao/FuncionarioDAO.java</file>
-            <file>file:/C:/Users/Gabriel/Documents/My%20Cheat%20Tables/MainPBL/src/model/VendedorAuxiliar.java</file>
-            <file>file:/C:/Users/Gabriel/Documents/My%20Cheat%20Tables/MainPBL/src/controller/Controller.java</file>
-            <file>file:/C:/Users/Gabriel/Documents/My%20Cheat%20Tables/MainPBL/src/model/Diretor.java</file>
+            <file>file:/C:/Users/Gabriel/Documents/NetBeansProjects/MainPBL/src/model/VendedorAuxiliar.java</file>
+            <file>file:/C:/Users/Gabriel/Documents/NetBeansProjects/MainPBL/src/model/Diretor.java</file>
+            <file>file:/C:/Users/Gabriel/Documents/NetBeansProjects/MainPBL/src/model/Funcionario.java</file>
+            <file>file:/C:/Users/Gabriel/Documents/NetBeansProjects/MainPBL/src/model/ConexaoBanco.java</file>
+            <file>file:/C:/Users/Gabriel/Documents/NetBeansProjects/MainPBL/src/controller/Controller.java</file>
+            <file>file:/C:/Users/Gabriel/Documents/NetBeansProjects/MainPBL/src/dao/FuncionarioDAO.java</file>
         </group>
     </open-files>
 </project-private>

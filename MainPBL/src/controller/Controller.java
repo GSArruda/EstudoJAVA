@@ -5,7 +5,6 @@ import dao.FuncionarioDAO;
 import java.awt.event.ActionListener;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
-import model.ConexaoBanco;
 import view.CRUD;
 
 

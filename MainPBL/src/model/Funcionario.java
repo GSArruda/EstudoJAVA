@@ -9,7 +9,7 @@ public class Funcionario {
     protected double salario;
     
 
-    public String getNome() {
+    public String getNome(){
         return this.nome;
     }
 
