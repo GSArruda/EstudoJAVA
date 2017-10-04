@@ -1,0 +1,54 @@
+header {
+	font-size: 50px;
+	text-align: center;
+	background-color: #00cc99;
+	width: 100%;
+	height: 100px;
+}
+
+nav {
+	background-color: #66ffff;
+	width: 100%;
+	height: 30px;
+	text-align: center;
+	margin-top: -16px;
+}
+
+li {
+	display: inline;	
+	padding-right: 50px;
+}
+
+section {
+	height: 615px;
+	width: 80%;
+	background-color: #ccccff;
+	float: left;
+
+}
+
+
+aside { 
+	float: right;
+	background-color: yellow;
+	width: 20%;
+	height: 615px;
+
+}
+
+h4 {
+	text-align: center;
+	padding-top: 90px;
+	font-size: 30px;
+}
+
+footer {
+	background-color: #99ccff;
+	width: 100%;
+	height: 1%;
+}
+
+h5 {
+	text-align: center;
+}
+
