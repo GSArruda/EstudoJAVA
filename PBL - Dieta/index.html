@@ -17,13 +17,13 @@
    			<form class="col s12 ">
      			 <div class="row">
        				 <div class="input-field col s6">
-          				<input  placeholder="Refeição" id="nomeProduto" type="text" class="validate" required>
+          				<input  placeholder="Refeição" id="nomeProduto" type="text">
      
        				 </div>
         			<div class="col s6">
         				<span>Horário</span>	
     					<p>
-      						<input name="horario" type="radio" id="horario1" value="6:00" />
+      						<input name="horario" class="with-gap" type="radio" id="horario1" value="6:00" />
       						<label for="horario1">6:00</label>
     					</p>
     					<p>
@@ -54,8 +54,6 @@
 		
 		<div class="input-field s12" >
 			<a class="waves-effect waves-light btn" onclick="adicionarProduto()">Cadastrar</a>
-			<a class="waves-effect waves-light btn" onclick="mostraProdutos(prd)">Mostrar produtos</a>
-			
 		</div>
 	
 		<div class="row">
@@ -68,7 +66,7 @@
 			</div>
 		</div>	
 			
-		<div class="col s12 center">
+		<div class="col s12 ">
 			<a class="waves-effect waves-light btn" onclick="gerarDieta()">Gerar dieta</a>
 		</div>
 

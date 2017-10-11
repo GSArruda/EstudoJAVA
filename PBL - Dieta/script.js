@@ -27,10 +27,7 @@ function adicionarProduto(){
 			}
 		}			
 	}
-	
-}
 
-function mostraProdutos(){
 	document.getElementById('prd').innerHTML = "Refeição:"
 	console.log('entrou na função mostraProdutos');
 	
@@ -46,17 +43,26 @@ function mostraProdutos(){
 		document.getElementById('hr').innerHTML += "<br>" + horarios[j];
 
 	}	
+	
 }
 
+
 function gerarDieta() {
-	var produtoAleatorio = Math.random();
-	var horarioAleatorio = Math.random();
-	produtoAleatorio = Math.floor(produtoAleatorio * produtos.length);
-	horarioAleatorio = Math.floor(horarioAleatorio * horarios.length);
 
 	document.getElementById('produtoSorteado').innerHTML = "Refeição:";
-	document.getElementById('produtoSorteado').innerHTML += "<br>" + produtos[produtoAleatorio];
-	document.getElementById('horarioSorteado').innerHTML = "Horário:";
-	document.getElementById('horarioSorteado').innerHTML += "<br>" + horarios[horarioAleatorio];
+	for (var i = 0 ; i < 6; i++){	
+		var produtoAleatorio = Math.random();
+		produtoAleatorio = Math.floor(produtoAleatorio * produtos.length);
+		document.getElementById('produtoSorteado').innerHTML += "<br>" + produtos[produtoAleatorio];
+	}
+
+	
+	document.getElementById('horarioSorteado').innerHTML = "Horário:" + "<br>";
+	document.getElementById('horarioSorteado').innerHTML += "6:00" + "<br>" ;
+	document.getElementById('horarioSorteado').innerHTML += "9:00" + "<br>" ;
+	document.getElementById('horarioSorteado').innerHTML += "12:00" + "<br>" ;
+	document.getElementById('horarioSorteado').innerHTML += "15:00" + "<br>" ;
+	document.getElementById('horarioSorteado').innerHTML += "18:00" + "<br>" ;
+	document.getElementById('horarioSorteado').innerHTML += "21:00" + "<br>" ;
 
 }
