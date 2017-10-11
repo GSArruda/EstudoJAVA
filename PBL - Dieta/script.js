@@ -3,21 +3,30 @@ let horarios = [];
 
 function adicionarProduto(){
 	var produto = document.getElementById('nomeProduto').value;
-	var horario = document.getElementsByName('horario');
-	
-	produtos.push(produto);
-	
+	var horario = document.getElementsByName('horario'); 
+	var cont = 0;
+	console.log(horario.length);
+
 	for (var i = 0;i < horario.length;i++){
 		if (horario[i].checked === true) {
-			horarios.push(horario[i].value);
-			break;
+			cont++;		
 		}
-	}
-	console.log(produto);
-	console.log(horario);
-	console.log(produtos);
-	console.log(horarios);
+	}	
 
+	if (produto == ""){
+		alert("Campo produto está inválido!!!");
+
+	}else if (cont === 0){
+		alert("Campo horário está inválido!!!");
+	}else{
+		produtos.push(produto);	
+		for (var i = 0;i < horario.length;i++){
+			if (horario[i].checked === true) {
+				horarios.push(horario[i].value);
+				break;
+			}
+		}			
+	}
 	
 }
 
