@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<div>
+		<form>
+			<input type="text" id="nome" placeholder="Nome">
+			<br><br>			
+			<input type="number" id="idade" placeholder="Idade">
+			<br><br>
+			<input type="button" onclick="verificaMaioridade()" value="Clique aqui"></input>
+			<span id="resultado"></span>
+		</form>
+	</div>
+
+	<script type="text/javascript">
+		function verificaMaioridade(){
+			console.log('Entrou');
+			var idade = document.getElementById('idade').value;	
+			var nome = document.getElementById('nome').value;
+			console.log(idade);
+			if (idade >= 18){
+				document.getElementById('resultado').innerHTML = "<br>" + nome + ", você é maior de idade.";
+
+			}else if (idade === "" || idade <= 1){
+				document.getElementById('resultado').innerHTML = "<br>" + nome + ", idade inválida.";
+			}else{
+				document.getElementById('resultado').innerHTML = "<br>" + nome + ", você é menor de idade.";
+			}
+		}
+	</script>
+</body>
+</html>

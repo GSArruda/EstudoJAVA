@@ -1,5 +1,12 @@
 var listaEmails = [];
 var listaSenhas = [];
+var nascimento = {
+	dia:'',
+	mes:'',
+	ano:'',
+};
+var cont=0;
+
 
 function adicionaDados(){
 	console.log("Entrou no adicionaDados");
@@ -55,4 +62,42 @@ function comparaSenhas(senha1,senha2){
 		return false;
 	}
 
+}
+
+function pegaMes(){
+	console.log("Entrou no pegaMes");
+	 var valorMes = document.getElementsByName('mesNascimento')[0];
+	 if (cont === 0 ){
+	 	 var opcao = valorMes.options[valorMes.selectedIndex].value;
+	 }else{
+	 	 var opcao = valorMes.options[valorMes.selectedIndex].value -1;
+     }
+    console.log(opcao);
+    if (opcao == 1 ){
+        nascimento.mes = 'Janeiro';      
+    }else if(opcao == 2){
+        nascimento.mes = 'Fevereiro';
+    }else if(opcao == 3){
+        nascimento.mes = 'Março';
+    }else if(opcao == 4){
+        nascimento.mes = 'Abril';
+    }else if(opcao == 5){
+        nascimento.mes = 'Maio';
+    }else if(opcao == 6){
+        nascimento.mes = 'Junho';
+    }else if(opcao == 7){
+        nascimento.mes = 'Julho';
+    }else if(opcao == 8){
+        nascimento.mes = 'Agosto';
+    }else if(opcao == 9){
+        nascimento.mes = 'Setembro';
+    }else if(opcao == 10){
+        nascimento.mes = 'Outubro';
+    }else if(opcao == 11){
+        nascimento.mes = 'Novembro';
+    }else if(opcao == 12){
+        nascimento.mes = 'Dezembro';
+    }
+    cont++;
+    console.log(nascimento.mes);
 }
