@@ -76,7 +76,7 @@
 
 			<div class="form-group col-md-2">	
       			<input type="number" class="form-control" name='ano' placeholder="Ano" ng-model = "ano" ng-required="true" 
-      			max='2016'>
+      			max={{anoAtual-1}}>
       			<span ng-show="pessoaForm.ano.$error.required && pessoaForm.ano.$dirty">Preencha o campo ano.</span>
       			<span ng-show="pessoaForm.ano.$error.max">Ano não permitido.</span>
 			</div>
